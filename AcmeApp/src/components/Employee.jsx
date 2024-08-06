@@ -1,10 +1,11 @@
 import React from 'react';
+import styles from './Employee.module.css';
 
 function Employee({ employee }) {
   return (
-    <div>
-      <h3>{employee.name}</h3>
-      <p>Is Admin: {employee.is_admin ? 'Yes' : 'No'}</p>
+    <div className={styles.employee}>
+      <h3 className={styles.employeeName}>{employee.name}</h3>
+      <p className={styles.employeeAdmin}>Is Admin: {employee.is_admin ? 'Yes' : 'No'}</p>
     </div>
   );
 }

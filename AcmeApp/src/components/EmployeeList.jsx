@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Employee from './Employee';
+import styles from './EmployeeList.module.css';
 
 function EmployeeList() {
   const [employees, setEmployees] = useState([]);
 
-  useEffect(()   => {
+  useEffect(() => {
     const fetchEmployees = async () => {
       try {
         const response = await   
@@ -20,8 +21,8 @@ function EmployeeList() {
   }, []);
 
   return (
-    <div>   
-
+    <div   
+ className={styles.employeeList}>
       {employees.map(employee => (
         <Employee key={employee.id} employee={employee} />
       ))}
