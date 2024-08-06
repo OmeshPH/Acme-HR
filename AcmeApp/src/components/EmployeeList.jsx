@@ -1,29 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import axios from 'axios';
 import Employee from './Employee';
-import styles from './EmployeeList.module.css';
+import styles from '../styles/EmployeeList.module.css';
 
 function EmployeeList() {
   const [employees, setEmployees] = useState([]);
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const filteredEmployees = useMemo(() => {
+    // Apply any filtering or sorting logic here
+    return employees;
+  }, [employees]);
 
   useEffect(() => {
-    const fetchEmployees = async () => {
-      try {
-        const response = await   
- axios.get('/api/v1/employees');
-        setEmployees(response.data);
-      } catch (error) {
-        console.error('Error fetching employees:', error);
-      }
-    };
-
-    fetchEmployees();
+    // ... fetch employees
   }, []);
 
   return (
-    <div   
- className={styles.employeeList}>
-      {employees.map(employee => (
+    <div className={styles.employeeList}>
+      {/* ... */}
+      {filteredEmployees.map(employee => (
         <Employee key={employee.id} employee={employee} />
       ))}
     </div>

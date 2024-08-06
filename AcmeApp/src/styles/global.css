@@ -1,0 +1,10 @@
+.employee-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .employee {
+    border: 1px solid #ccc;
+    padding: 1rem;
+  }
