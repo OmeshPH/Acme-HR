@@ -17,9 +17,11 @@ logs/
 *.njsproj
 *.sln
 *.swp
+*.env
 
 # Testing
 coverage/
 
 # Database files
 db/*.sqlite  # Adjust for your database file format
+
